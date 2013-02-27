@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>MinerJS Sandbox</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <!-- Cascading Stylesheets -->
+        <link type="text/css" href="style.css" rel="stylesheet" />
+        <!-- JavaScript -->
+        <script type="text/javascript" charset="utf-8" src="script.js"></script>
+        <script type="text/javascript" charset="utf-8" src="../js/scripts/Namespace.js"></script>
+        <script type="text/javascript" charset="utf-8" src="../js/scripts/helper.js"></script>
+        <script type="text/javascript" charset="utf-8">
+            // Initial Code
+            window.onload = function() {
+                window.engine = new Engine();
+                window.engine.initialize();
+            
+                var renderRect = document.getElementById('renderRectangle');
+                renderRect.onclick = function() {
+                    var rect = new Rect();
+                                
+                    var x = document.getElementById('x').value;
+                    var y = document.getElementById('y').value;
+                    var w = document.getElementById('w').value;
+                    var h = document.getElementById('h').value;
+                    var c = document.getElementById('c').value;
+                    var z = document.getElementById('z').value;
+            
+                    if(w !== 0 && h !== 0 && c !== 0) {
+                        rect.setParameter(x, y, w, h, c, z);
+            
+                        window.engine.addObject(rect);
+                        window.engine.render();
+                    } else {
+                        alert('Wrong render information!\nCheck console output');
+                        console.log(w, h, c);
+                    }
+                };
+                
+                var renderImage = document.getElementById('renderImage');
+                renderImage.onclick = function() {
+                    var i = new Img();
+                                
+                    var src = document.getElementById('image').value;
+                    var x = document.getElementById('ix').value;
+                    var y = document.getElementById('iy').value;
+                    var z = document.getElementById('iz').value;
+                                
+                    i.initialize(x, y, z, src);
+                                
+                    window.engine.addObject(i);
+                    window.engine.render();
+                                
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <div id="controls">
+            <div id="stats" class="controls">
+                Statistics: <br />
+                Rendered Objects: <span id="stats_renderedObjects">0</span><br />
+                Selected Color:<spand id="stats_selectedColor"></spand><br />
+            </div>
+            <div id="rectangles" class="controls">
+                Rectangle: <br />
+                <input type="text" id="x" value="10" /> x <br />
+                <input type="text" id="y" value="10" /> y <br />
+                <input type="text" id="w" value="100" /> width <br />
+                <input type="text" id="h" value="100" /> height <br />
+                <input type="text" id="c" value="#cdfcdf" /> color <br />
+                <input type="text" id="z" value="0" /> depth <br />
+                <button id="renderRectangle">render</button>
+            </div>
+            <div id="images" class="controls">
+                Image: <br />
+                <input type="text" id="ix" value="10" /> x <br />
+                <input type="text" id="iy" value="10" /> y <br />
+                <input type="text" id="iz" value="0" /> depth <br />
+                <select id="image">
+                    <option value="img/mine.png">Mine</option>
+                    <option value="img/house.png">House</option>
+                </select> <br />
+                <button id="renderImage">render</button>
+            </div>
+        </div>
+        <div id="screen">
+            <canvas id="gameScreen">HTML5 Only</canvas>
+        </div>
+    </body>
+</html>

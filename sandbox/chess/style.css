@@ -1,0 +1,46 @@
+#controls {
+    position: absolute;
+    width: 200px;
+    padding: 5px;
+    border: solid 1px;
+    top: 10px;
+    left: 10px;
+    bottom: 10px;
+}
+
+#controls input[type="text"] {
+    width: 100px;
+}
+
+.controls {
+    position: relative;
+    border: solid 1px black;    
+    padding: 3px;
+}
+
+#stats_selectedColor {    
+    width: 5px;
+    height: 5px;
+    
+    display: block;
+    
+    border: 1px solid black;
+}
+
+#rectangles {
+    top: 5px;
+}
+
+#images {
+    top: 10px;
+}
+
+#screen {
+    position: absolute;
+    top: 10px;
+    left: 234px;
+}
+
+#gameScreen {
+    border: solid 1px black;
+}

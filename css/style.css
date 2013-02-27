@@ -1,0 +1,60 @@
+#MinerJS-Controls {
+    position: absolute;
+    
+    top  : 0px;
+    left : 0px;
+    right: 0px;
+    
+    height: 24px;
+    
+    padding: 5px;
+    
+    border-bottom: 1px solid;
+}
+#MinerJS-Mainframe {
+    position: absolute;
+    
+    top   : 35px;
+    left  : 0px;
+    bottom: 0px;
+    
+    width: 300px;
+    height: 100%;
+    
+    padding: 5px;
+    
+    border-right: 1px solid;
+}
+#MinerJS-Feedback {
+    position: absolute;
+    
+    top   : 35px;
+    left  : 311px;
+    right : 0px;
+    bottom: 0px;
+    
+    width : 500px;
+    height: 100px;
+    
+    padding: 5px;
+    
+    overflow: scroll;
+}
+#MinerJS-Canvas {
+    position: absolute;
+    
+    top   : 150px;
+    left  : 315px;
+    right : 0px;
+    bottom: 0px;
+}
+#MinerJS-Canvas-GameCLient {
+    position: absolute;
+    
+    width : 400px;
+    height: 400px;
+}
+
+.onStart {
+    display: none;
+}

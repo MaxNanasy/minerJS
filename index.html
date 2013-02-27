@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>MinerJS</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <!-- JavaScript -->
+        <!-- # MinerJS Game + Engine -->
+        <script type="text/javascript" charset="utf-8" src="js/Game/Namespace.js"></script>
+        <script type="text/javascript" charset="utf-8" src="js/Game/GameEngine.js"></script>
+        <script type="text/javascript" charset="utf-8" src="js/Game/Entities/Miner.js"></script>
+        <!-- #MinerJS Graphic Engine -->
+        <script type="text/javascript" charset="utf-8" src="js/GraphicEngine/GraphicEngine.js"></script>
+		<!-- #MinerJS HTML5 Objects -->
+        <script type="text/javascript" charset="utf-8" src="js/HTML5/Namespace.js"></script>
+        <script type="text/javascript" charset="utf-8" src="js/HTML5/Context2D.js"></script>
+        <script type="text/javascript" charset="utf-8" src="js/HTML5/Rectangle.js"></script>
+        <script type="text/javascript" charset="utf-8" src="js/HTML5/Image.js"></script>
+        <!-- # Scripts / Website -->
+        <script type="text/javascript" charset="utf-8" src="js/scripts/Namespace.js"></script>
+        <script type="text/javascript" charset="utf-8" src="js/scripts/helper.js"></script>
+        <script type="text/javascript" charset="utf-8" src="js/scripts/controls.js"></script>
+        <script type="text/javascript" charset="utf-8">
+            window.onload = function() {
+                // Create GameEngine instance
+                var MinerJS_GameEngine = new MinerJS.GameEngine();
+                MinerJS_GameEngine.init();
+                // Start engine
+                MinerJS_GameEngine.start();
+            }
+        </script>
+        <!-- Cascading Stylesheets -->
+        <link type="text/css" href="css/style.css" rel="stylesheet" />
+        <link type="text/css" href="css/html.css" rel="stylesheet" />
+    </head>
+    <body>
+        <div id="MinerJS-Controls">
+            MinerJS
+        </div>
+        <div id="MinerJS-Mainframe">Mainframe</div>
+        <div id="MinerJS-Feedback">Feedback<br /></div>
+        <div id="MinerJS-Canvas">
+            <canvas id="MinerJS-Canvas-GameClient">HTML5 Only</div>
+        </div>
+    </body>
+</html>

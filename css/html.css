@@ -1,0 +1,15 @@
+body {
+    font-family: 'Courier New';
+    font-size  : 12px;
+}
+
+button {
+    font-family: 'Courier New';
+    font-size  : 12px;
+    
+    background-color: black;
+    
+    border-color: black;
+    
+    color: white;
+}

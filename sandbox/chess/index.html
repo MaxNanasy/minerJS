@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>MinerJS MinerChess</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <!-- Cascading Stylesheets -->
+        <link type="text/css" href="style.css" rel="stylesheet" />
+        <!-- JavaScript -->
+        <script type="text/javascript" charset="utf-8" src="../../js/scripts/Namespace.js"></script>
+        <script type="text/javascript" charset="utf-8" src="../../js/scripts/helper.js"></script>
+        <script type="text/javascript" charset="utf-8" src="../script.js"></script>
+        <script type="text/javascript" charset="utf-8" src="Chess.js"></script>
+        <script type="text/javascript" charset="utf-8" src="board/Meeple.js"></script>
+        <script type="text/javascript" charset="utf-8" src="board/Field.js"></script>
+        <script type="text/javascript" charset="utf-8" src="board/Board.js"></script>
+        <script type="text/javascript" charset="utf-8">
+            // Initial Code
+            window.onload = function() {
+                window.engine = new Engine();
+                window.engine.initialize();
+                
+                window.chess = new MinerJS.MinerChess();
+                window.chess.initialize({ engine : window.engine });
+                
+                document.getElementById('printBoardStatus').onclick = function() {
+                    window.chess.getBoard().printBoardStatus();
+                }
+                document.getElementById('clear').onclick = function() {
+                    (typeof window.console.clear === 'function') ? window.console.clear() : undefined;
+                }
+                
+                console.log('Welcome to MinerJS MinerChess!');
+            }
+        </script>
+    </head>
+    <body>
+        <div id="controls">
+            <div id="stats" class="controls">
+                Statistics: <br />
+                Rendered Objects: <span id="stats_renderedObjects">0</span><br />
+                Selected Color:<spand id="stats_selectedColor"></spand><br />
+                <button id="printBoardStatus">board status</button>
+                <button id="clear">clear</button>
+            </div>            
+        </div>
+        <div id="screen">
+            <canvas id="gameScreen">HTML5 Only</canvas>
+        </div>
+    </body>
+</html>
